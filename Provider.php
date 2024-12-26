@@ -86,7 +86,7 @@ class Provider extends AbstractProvider
 
     protected function getPurePassportUrl($type): string {
 
-        return 'https://passport.madebypure.net' . ltrim($this->getConfig($type, Arr::get([
+        return 'https://passport.madebypure.net/' . ltrim($this->getConfig($type, Arr::get([
             'authorize_uri' =>  'oauth/authorize',
             'token_uri'     =>  'oauth/token',
             'userinfo_uri'  =>  'api/v1/user',
