@@ -1,8 +1,10 @@
-# LaravelPassport
+# Socialite for Pure Passport
 
 ```bash
-composer require socialiteproviders/laravelpassport
+composer require madebypure/socialite-pure-passport
 ```
+> ⚠️ Note: this is a fork of Socialite Providers's "Laravel Passport" provider. This is an early version and may not be
+> fully functional yet.
 
 ## Installation & Basic Usage
 
@@ -11,11 +13,10 @@ Please see the [Base Installation Guide](https://socialiteproviders.com/usage/),
 ### Add configuration to `config/services.php`
 
 ```php
-'laravelpassport' => [    
-  'client_id' => env('LARAVELPASSPORT_CLIENT_ID'),  
-  'client_secret' => env('LARAVELPASSPORT_CLIENT_SECRET'),  
-  'redirect' => env('LARAVELPASSPORT_REDIRECT_URI'),
-  'host' => env('LARAVELPASSPORT_HOST'),
+'purepassport' => [    
+  'client_id'       =>  env('PUREPASSPORT_CLIENT_ID'),  
+  'client_secret'   =>  env('PUREPASSPORT_CLIENT_SECRET'),  
+  'redirect'        =>  env('PUREPASSPORT_REDIRECT_URI')
 ],
 ```
 
@@ -29,7 +30,7 @@ In Laravel 11, the default `EventServiceProvider` provider was removed. Instead,
 
 ```php
 Event::listen(function (\SocialiteProviders\Manager\SocialiteWasCalled $event) {
-    $event->extendSocialite('laravelpassport', \SocialiteProviders\LaravelPassport\Provider::class);
+    $event->extendSocialite('purepassport', \MadeByPure\PurePassport\Provider::class);
 });
 ```
 <details>
@@ -44,7 +45,7 @@ Add the event to your `listen[]` array in `app/Providers/EventServiceProvider`. 
 protected $listen = [
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
         // ... other providers
-        \SocialiteProviders\LaravelPassport\LaravelPassportExtendSocialite::class.'@handle',
+        \MadeByPure\PurePassport\PurePassportExtendSocialite::class.'@handle',
     ],
 ];
 ```
@@ -55,13 +56,13 @@ protected $listen = [
 You should now be able to use the provider like you would regularly use Socialite (assuming you have the facade installed):
 
 ```php
-return Socialite::driver('laravelpassport')->redirect();
+return Socialite::driver('purepassport')->redirect();
 ```
 
 ### Returned User fields
 
 - ``id``
-- ``nickname``
 - ``name``
 - ``email``
 - ``avatar``
+- ``role``

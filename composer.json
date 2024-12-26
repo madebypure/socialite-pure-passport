@@ -1,6 +1,6 @@
 {
-    "name": "socialiteproviders/laravelpassport",
-    "description": "LaravelPassport OAuth2 Provider for Laravel Socialite",
+    "name": "madebypure/socialite-pure-passport",
+    "description": "Socialite provider for Pure Passport",
     "license": "MIT",
     "keywords": [
         "laravel",
@@ -11,14 +11,14 @@
     ],
     "authors": [
         {
-            "name": "recca0120",
-            "email": "recca0120@name.com"
+            "name": "safeboot",
+            "email": "sanjin.brajevic@madebypure.net"
         }
     ],
     "support": {
-        "issues": "https://github.com/socialiteproviders/providers/issues",
-        "source": "https://github.com/socialiteproviders/providers",
-        "docs": "https://socialiteproviders.com/laravelpassport"
+        "issues": "https://github.com/madebypure/socialite-pure-passport/issues",
+        "source": "https://github.com/madebypure/socialite-pure-passport",
+        "docs": "https://developers.madebypure.net/docs/passport"
     },
     "require": {
         "php": "^8.0",
