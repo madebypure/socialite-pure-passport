@@ -94,7 +94,7 @@ class Provider extends AbstractProvider
 
     }
 
-    protected function getUserData($user, $key): array {
+    protected function getUserData($user, $key): string {
 
         return Arr::get($user, $this->getConfig('user_'.$key, $key));
 
