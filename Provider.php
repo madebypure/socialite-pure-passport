@@ -67,9 +67,9 @@ class Provider extends AbstractProvider
      * Map the raw user array to a Socialite User instance.
      *
      * @param  array  $user
-     * @return \Laravel\Socialite\User
+     * @return \SocialiteProviders\Manager\OAuth2\User
      */
-    protected function mapUserToObject(array $user): \Laravel\Socialite\User {
+    protected function mapUserToObject(array $user): \SocialiteProviders\Manager\OAuth2\User {
 
         $key = $this->getConfig('userinfo_key');
         $data = ($key === null) === true ? $user : Arr::get($user, $key, []);
